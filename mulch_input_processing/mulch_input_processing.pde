@@ -9,6 +9,7 @@ DrawAndFill drawAndFill = new DrawAndFill();
 Serial port;
 PrintWriter pressure_data_writer;
 final Integer pin_sum = 8;
+public Integer pin = 0;
 
 public ArrayList<Integer> fingerPointX = new ArrayList<Integer>();
 public ArrayList<Integer> fingerPointY = new ArrayList<Integer>();
@@ -24,7 +25,8 @@ void setup() {
   background(255);
   stroke(0);
   drawAndFill.drawKeyAndFinger(fingerPointX, fingerPointY);
-  typingText.printText();
+  typingText.setUpKeyTypeFinger();
+  typingText.loadText();
   fill(0);
   port.clear();
 }
@@ -61,10 +63,15 @@ void errorMessagePrint(Integer pinNumber) {
 
 void keyPressed() {
   if (key == ENTER) {
-    pressure_data_writer.flush();
-    pressure_data_writer.close();
-    exit();
+    this.endProgram();
   } else if (key != ENTER) {
+    typingText.fillText(key);
     drawAndFill.fillKey(key);
   }
+}
+
+void endProgram(){
+  pressure_data_writer.flush();
+  pressure_data_writer.close();
+  exit();
 }

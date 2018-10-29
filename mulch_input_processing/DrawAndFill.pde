@@ -13,7 +13,7 @@ class DrawAndFill{
     fill(255);
     ellipse(fingerPointX.get(7-pinNumber), fingerPointY.get(7-pinNumber), 30, 200);
     stroke(0);
-    if(pressureData != 255 && pressureData >= 150)  fill(255, 0, 0);
+    if(pressureData != 255 && pressureData >= 150)  {fill(255, 0, 0); pin = pinNumber;}
     else if(pressureData < 150) errorMessagePrint(pinNumber);
     ellipse(fingerPointX.get(7-pinNumber), fingerPointY.get(7-pinNumber), 30, 200);
   }
