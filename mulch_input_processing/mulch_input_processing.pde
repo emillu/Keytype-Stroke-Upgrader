@@ -55,11 +55,7 @@ void pressureDataWriter(char typekey) {
   pressure_data_writer.println();
 }
 
-void errorMessagePrint(Integer pinNumber) {
-  background(255);
-  text(pinNumber + "番ピンでエラーが発生しました。接続を確認して実行し直してください", 200, 200);
-  noLoop();
-}
+
 
 void keyPressed() {
   if (key == ENTER) {
@@ -70,7 +66,7 @@ void keyPressed() {
   }
 }
 
-void endProgram(){
+void endProgram() {
   pressure_data_writer.flush();
   pressure_data_writer.close();
   exit();
