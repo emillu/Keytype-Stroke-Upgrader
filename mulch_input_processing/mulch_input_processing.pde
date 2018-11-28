@@ -10,7 +10,6 @@ Serial port;
 PrintWriter pressure_data_writer;
 final Integer pin_sum = 8;
 public Integer pin = 0;
-
 public ArrayList<Integer> fingerPointX = new ArrayList<Integer>();
 public ArrayList<Integer> fingerPointY = new ArrayList<Integer>();
 public HashMap<String, Integer> keyNameandPointXMap = new HashMap<String, Integer>();
